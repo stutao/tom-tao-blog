@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <CMS />
-
   </div>
 </template>
 
@@ -17,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
+/* #app {
   margin: 0 15%;
-}
+} */
 </style>

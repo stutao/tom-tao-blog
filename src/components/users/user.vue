@@ -2,7 +2,7 @@
   <Dropdown style="margin-left: 20px;float:right">
     <div class="avatar">
       <div v-if="isLogin">
-        <img src="https://tse3-mm.cn.bing.net/th/id/OIP.RKh2hxr2mwPR__c-Ya2XFQAAAA?pid=Api&rs=1" />
+        <Avatar src="https://tse3-mm.cn.bing.net/th/id/OIP.RKh2hxr2mwPR__c-Ya2XFQAAAA?pid=Api&rs=1" />
       </div>
       <div v-else>
         登录/注册
@@ -47,6 +47,6 @@ img {
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
   color: #17233d;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 </style>
