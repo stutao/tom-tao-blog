@@ -12,7 +12,6 @@ Vue.prototype.$axios=axios //定义为全局
 Vue.config.productionTip = false
 
 Vue.use(ViewUI)
-
 new Vue({
   render: (h) => h(App),
   router,

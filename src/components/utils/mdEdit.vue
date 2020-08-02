@@ -1,14 +1,19 @@
 <template>
   <div>
-    <mavon-editor v-model="content" ref="md" @change="change" style="min-height: 600px;min-width:400px" />
+    <mavon-editor
+      v-model="content"
+      ref="md"
+      @change="change"
+      style="min-height: 600px;min-width:400px"
+    />
     <Button type="success" short @click="submit">发布</Button>
   </div>
 </template>
- 
+
 <script>
 // 导入组件 及 组件样式
-import { mavonEditor } from "mavon-editor";
-import "mavon-editor/dist/css/index.css";
+import { mavonEditor } from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 export default {
   components: {
     mavonEditor,
@@ -17,22 +22,33 @@ export default {
   // html：及时转的html
   data() {
     return {
-      content: "",
-      html: "",
-    };
+      content: '',
+      html: '',
+    }
   },
   methods: {
     // 所有操作都会被解析重新渲染
     change(value, render) {
       // render 为 markdown 解析后的结果[html]
-      this.html = render;
+      this.html = render
     },
     // 提交
     submit() {
-      console.log(this.content);
-      console.log(this.html);
+      const articleTitle = this.$parent.$parent.$parent.title
+      const thumbnail_url = this.$parent.$parent.$parent.thumbnail_url
+      const tags = this.$parent.$parent.$parent.tags[1]
+      const content = this.content
+      const html = this.html
+      const data = {
+        articleTitle,
+        thumbnail_url,
+        tags,
+        content,
+        html
+      }
+      console.log(data);
     },
   },
   mounted() {},
-};
+}
 </script>
