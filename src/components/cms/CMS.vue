@@ -59,13 +59,18 @@
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
-              <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
+              <Menu
+                active-name="1-2"
+                theme="light"
+                width="auto"
+                :open-names="['1']"
+              >
                 <Submenu name="1">
                   <template slot="title">
                     <Icon type="ios-navigate"></Icon>文章管理
                   </template>
-                  <MenuItem name="1-1" >我的文章</MenuItem>
-                  <MenuItem name="1-2" @click.native='publishClick'>发布文章</MenuItem>
+                  <MenuItem name="1-1">我的文章</MenuItem>
+                  <MenuItem name="1-2" @click.native="publishClick">发布文章</MenuItem>
                 </Submenu>
                 <Submenu name="2">
                   <template slot="title">
@@ -99,18 +104,16 @@ import User from "@/components/users/user";
 
 export default {
   data() {
-    return {
-      
-    }
+    return {};
   },
   components: {
     MdEdit,
     User,
   },
-  methods:{
-    publishClick(){
-      this.$router.push("/publish-article")
-    }
-  }
+  methods: {
+    publishClick() {
+      this.$router.push("/publish-article");
+    },
+  },
 };
 </script>

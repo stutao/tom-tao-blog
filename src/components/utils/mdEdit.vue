@@ -6,6 +6,7 @@
       @change="change"
       style="min-height: 600px;min-width:400px"
     />
+    <br>
     <Button type="success" short @click="submit">发布</Button>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
     submit() {
       const articleTitle = this.$parent.$parent.$parent.title
       const thumbnail_url = this.$parent.$parent.$parent.thumbnail_url
-      const tags = this.$parent.$parent.$parent.tags[1]
+      const tags = this.$parent.$parent.$parent.tags
       const content = this.content
       const html = this.html
       const data = {

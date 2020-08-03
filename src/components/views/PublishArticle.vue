@@ -27,8 +27,9 @@
     <br />
     <Row>
       <Col span="1">标签</Col>
-      <Col span="4"> <Input placeholder="输入标签" ref="tagvalue"></Input> </Col
-      >&nbsp;
+      <Col span="4">
+        <Input placeholder="输入标签" ref="tagvalue"></Input>
+      </Col>&nbsp;
       <Col span="2">
         <Button type="info" @click="addTag">添加标签</Button>
       </Col>
@@ -46,8 +47,7 @@
           type="dot"
           size="medium"
           @on-close="closeTag"
-          >{{ tag }}</Tag
-        >
+        >{{ tag }}</Tag>
       </Col>
     </Row>
 
@@ -60,60 +60,61 @@
     </Row>
     <br />
   </div>
-  
 </template>
 
 <script>
-import MD from '@/components/utils/mdEdit'
+import MD from "@/components/utils/mdEdit";
 
 export default {
-  name: 'PublishArticle',
+  name: "PublishArticle",
   data() {
     return {
       file: null,
       loadingStatus: false,
-      title: '',
+      title: "",
       tags: [],
-      thumbnail_url: '',
-    }
+      thumbnail_url: "",
+    };
   },
   components: {
     MD,
   },
   methods: {
     handleUpload(file) {
-      this.file = file
-      return false
+      this.file = file;
+      return false;
     },
     upload() {
-      this.loadingStatus = true
-      this.$refs.upload.post(this.file)
+      this.loadingStatus = true;
+      this.$refs.upload.post(this.file);
     },
     addTag() {
-      const tagValue = this.$refs.tagvalue.currentValue
-      if (tagValue.length <= 0) {
-        this.$Message.error('请输入标签内容')
+      const tagValue = this.$refs.tagvalue.currentValue;
+      if (tagValue.length <= 0 || tagValue.length > 5) {
+        this.$Message.error("请输入正确标签内容:长度(0-5)");
+      } else if (this.tags.length >= 4) {
+        this.$Message.error("最多添加4个标签");
       } else {
         if (this.tags.indexOf(tagValue) === -1) {
-          this.tags.push(tagValue)
+          this.tags.push(tagValue);
         } else {
-          this.$Message.error('当前标签已存在')
+          this.$Message.error("当前标签已存在");
         }
       }
     },
     closeTag(event, name) {
-      const index = this.tags.indexOf(name)
-      this.tags.splice(index, 1)
+      const index = this.tags.indexOf(name);
+      this.tags.splice(index, 1);
     },
     uploadSuccess(response) {
-      this.$Message.success('上传成功')
-      this.thumbnails_url = response.url
+      this.$Message.success("上传成功");
+      this.thumbnail_url = response.url;
     },
     uploadError(error) {
-      this.$Message.error('上传失败')
-    }
+      this.$Message.error("上传失败");
+    },
   },
-}
+};
 </script>
 
 <style scoped>
