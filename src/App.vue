@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <CMS />
+    <index />
   </div>
 </template>
 
 <script>
 import CMS from "@/components/cms/CMS";
-
+import index from "@/components/index/Index";
 export default {
   name: "App",
   components: {
     CMS,
+    index,
   },
 };
 </script>

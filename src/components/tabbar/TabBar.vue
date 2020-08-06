@@ -1,36 +1,33 @@
 <template>
-  <Layout>
-    <Header>
-      <Menu mode="horizontal" theme="dark" active-name="1">
-        <div class="layout-logo">TomTao后台管理</div>
-        <div class="layout-nav">
-          <MenuItem name="1">
-            <Icon type="ios-navigate"></Icon>Item 1
-          </MenuItem>
-          <MenuItem name="2">
-            <Icon type="ios-keypad"></Icon>Item 2
-          </MenuItem>
-          <MenuItem name="3">
-            <Icon type="ios-analytics"></Icon>Item 3
-          </MenuItem>
-          <MenuItem name="4">
-            <Icon type="ios-paper"></Icon>Item 4
-          </MenuItem>
-          <MenuItem name="5">
-            <User />
-          </MenuItem>
-        </div>
-      </Menu>
-    </Header>
-  </Layout>
-
+  <Menu mode="horizontal" :theme="theme1" active-name="1">
+    <div class="layout-logo">
+      <slot name="layout-logo"></slot>
+    </div>
+    <div class="layout-nav">
+      <MenuItem name="1">
+        <Icon type="md-paper-plane" />首页
+      </MenuItem>
+      <MenuItem name="2">
+        <Icon type="logo-python" />Python
+      </MenuItem>
+      <MenuItem name="3">
+        <Icon type="ios-water" />CS基础
+      </MenuItem>
+      <MenuItem name="4">
+        <Icon type="md-lock" />信息安全
+      </MenuItem>
+      <MenuItem name="5">
+        <User class="user" />
+      </MenuItem>
+    </div>
+  </Menu>
 </template>
 <script>
 import User from "@/components/users/user";
 export default {
   data() {
     return {
-      theme1: "dark",
+      theme1: "light",
     };
   },
   components: {
@@ -58,8 +55,11 @@ export default {
   font-size: 24px;
 }
 .layout-nav {
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
   margin-right: 20px;
+}
+.user {
+  float: right;
 }
 </style>
