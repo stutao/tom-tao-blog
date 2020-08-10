@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div>
     <Row>
       <Col span="20" style="margin-left: 5%;">
         <tabbar>
@@ -7,9 +7,9 @@
         </tabbar>
       </Col>
     </Row>
-
     <br />
-    
+    <router-view></router-view>
+    <Footer class="layout-footer-center">2020-xxx 仅供学习使用 &copy; TalkingData TomTao</Footer>
   </div>
 </template>
 
@@ -21,41 +21,19 @@ export default {
     tabbar,
   },
   data() {
-    return {
-      data: [
-        {
-          title: "This is title 1",
-          description:
-            "This is description, this is description, this is description.",
-          avatar:
-            "https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar",
-          content:
-            "This is the content, this is the content, this is the content, this is the content.",
-        },
-        {
-          title: "This is title 2",
-          description:
-            "This is description, this is description, this is description.",
-          avatar:
-            "https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar",
-          content:
-            "This is the content, this is the content, this is the content, this is the content.",
-        },
-        {
-          title: "This is title 3",
-          description:
-            "This is description, this is description, this is description.",
-          avatar:
-            "https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar",
-          content:
-            "This is the content, this is the content, this is the content, this is the content.",
-        },
-      ],
-    };
+    return {};
   },
   methods: {},
 };
 </script>
 
+
+
 <style scoped>
+.layout-footer-center {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+}
 </style>

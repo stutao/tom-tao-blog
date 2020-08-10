@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     publishClick() {
-      this.$router.push("/publish-article");
+      this.$router.push("/CMS/publish-article");
     },
   },
 };

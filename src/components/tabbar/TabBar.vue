@@ -4,16 +4,16 @@
       <slot name="layout-logo"></slot>
     </div>
     <div class="layout-nav">
-      <MenuItem name="1">
+      <MenuItem name="1" @click.native="typeClick('')">
         <Icon type="md-paper-plane" />首页
       </MenuItem>
-      <MenuItem name="2">
+      <MenuItem name="2" @click.native="typeClick('python')">
         <Icon type="logo-python" />Python
       </MenuItem>
-      <MenuItem name="3">
+      <MenuItem name="3" @click.native="typeClick('CS')">
         <Icon type="ios-water" />CS基础
       </MenuItem>
-      <MenuItem name="4">
+      <MenuItem name="4" @click.native="typeClick('information_security')">
         <Icon type="md-lock" />信息安全
       </MenuItem>
       <MenuItem name="5">
@@ -32,6 +32,11 @@ export default {
   },
   components: {
     User,
+  },
+  methods: {
+    typeClick(article_type) {
+      this.$router.push("/index/" + article_type);
+    },
   },
 };
 </script>

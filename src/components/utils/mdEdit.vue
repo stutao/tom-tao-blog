@@ -3,6 +3,8 @@
     <mavon-editor v-model="content" ref="md" @change="change" style="min-height: 600px" />
     <br />
     <Button type="success" short @click="submit">发布</Button>
+    <div v-html="html" v-highlight>
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 // 导入组件 及 组件样式
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
+
 export default {
   components: {
     mavonEditor,
@@ -40,10 +43,11 @@ export default {
         thumbnail_url,
         tags,
         content,
+        html,
       };
-      this.$axios.post("http://127.0.0.1:8000/article/create", data);
+      console.log(data);
+      // this.$axios.post("http://127.0.0.1:8000/article/create", data);
     },
   },
-  mounted() {},
 };
 </script>
