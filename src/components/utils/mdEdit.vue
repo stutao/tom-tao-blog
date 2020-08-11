@@ -3,7 +3,7 @@
     <mavon-editor v-model="content" ref="md" @change="change" style="min-height: 600px" />
     <br />
     <Button type="success" short @click="submit">发布</Button>
-    <div v-html="html" v-highlight>
+    <!-- <div v-html="html" v-highlight> -->
     </div>
   </div>
 </template>
@@ -33,20 +33,19 @@ export default {
     },
     // 提交
     submit() {
-      const articleTitle = this.$parent.$parent.$parent.title;
-      const thumbnail_url = this.$parent.$parent.$parent.thumbnail_url;
+      const title = this.$parent.$parent.$parent.title;
+      const thumbnail = this.$parent.$parent.$parent.thumbnail_url;
       const tags = this.$parent.$parent.$parent.tags;
       const content = this.content;
       const html = this.html;
       const data = {
-        articleTitle,
-        thumbnail_url,
+        title,
+        thumbnail,
         tags,
         content,
-        html,
       };
       console.log(data);
-      // this.$axios.post("http://127.0.0.1:8000/article/create", data);
+      this.$axios.post("http://127.0.0.1:8000/article/create?user_id=1", data);
     },
   },
 };

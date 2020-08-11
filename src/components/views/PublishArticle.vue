@@ -15,7 +15,7 @@
 
       <Col span="2">
         <Upload
-          action="http://127.0.0.1:8000/upload"
+          action="http://127.0.0.1:8000/img/upload"
           :show-upload-list="false"
           :on-success="uploadSuccess"
           :on-error="uploadError"
