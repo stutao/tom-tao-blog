@@ -9,6 +9,7 @@
               :title="item.title"
               :description="item.description"
               :itemid="item.id"
+              @click.native="artilceClick(item.id)"
             />
             {{ item.content }}
             <template slot="action">
@@ -75,6 +76,11 @@ export default {
       ],
     };
   },
+  methods:{
+    artilceClick(article_id){
+      this.$router.push("/article/"+article_id)
+    }
+  }
 };
 </script>
 

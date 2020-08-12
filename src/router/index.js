@@ -12,10 +12,11 @@ const PublishArticle = () => import("@/components/views/PublishArticle")
 const Index = () => import("@/components/index/Index")
 const List = () => import("@/components/articles/List")
 const CMS = () => import("@/components/cms/CMS")
+const Details = () => import("@/components/articles/details")
 
 const rootRouter = {
   path: "/",
-  redirect: '/index',
+  redirect: "/index",
 }
 
 const CMSRouter = {
@@ -43,7 +44,13 @@ const indexRouter = {
     },
   ],
 }
+
+const detailRouter = {
+  path: "/article/:article_id",
+  component: Details,
+}
+
 export default new Router({
-  routes: [rootRouter,CMSRouter, indexRouter],
+  routes: [rootRouter, CMSRouter, indexRouter,detailRouter],
   mode: "history",
 })

@@ -36,7 +36,7 @@ export default {
       const title = this.$parent.$parent.$parent.title;
       const thumbnail = this.$parent.$parent.$parent.thumbnail_url;
       const tags = this.$parent.$parent.$parent.tags;
-      const content = this.content;
+      const content = this.html;
       const html = this.html;
       const data = {
         title,
