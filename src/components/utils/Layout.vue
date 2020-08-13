@@ -24,9 +24,9 @@
 <script>
 import tabbar from "@/components/tabbar/TabBar";
 export default {
-  components:{
-    tabbar
-  }
+  components: {
+    tabbar,
+  },
 };
 </script>
 

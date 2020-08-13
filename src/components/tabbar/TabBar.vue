@@ -10,6 +10,9 @@
       <MenuItem name="2" @click.native="typeClick('python')">
         <Icon type="logo-python" />Python
       </MenuItem>
+      <MenuItem name="6" @click.native="typeClick('Js')">
+        <Icon type="logo-nodejs" />Js/Vue
+      </MenuItem>
       <MenuItem name="3" @click.native="typeClick('CS')">
         <Icon type="ios-water" />CS基础
       </MenuItem>
@@ -60,7 +63,7 @@ export default {
   font-size: 24px;
 }
 .layout-nav {
-  width: 550px;
+  width: 680px;
   margin: 0 auto;
   margin-right: 20px;
 }

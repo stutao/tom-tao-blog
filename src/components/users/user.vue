@@ -6,7 +6,6 @@
       </div>
       <div v-else>
         登录/注册
-        <Icon type="ios-arrow-down"></Icon>
       </div>
     </div>
     <DropdownMenu slot="list">

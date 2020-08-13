@@ -14,13 +14,13 @@
             {{ item.content }}
             <template slot="action">
               <li>
-                <Icon type="ios-star-outline" />123
+                <Icon type="ios-thumbs-up-outline" size="22" />123
               </li>
               <li>
-                <Icon type="ios-thumbs-up-outline" />234
+                <Icon type="ios-eye-outline" size="22" />345
               </li>
               <li>
-                <Icon type="ios-chatbubbles-outline" />345
+                <Icon type="ios-chatbubbles-outline" size="22" />345
               </li>
             </template>
             <template slot="extra">
@@ -44,7 +44,7 @@ export default {
     return {
       data: [
         {
-          id:1,
+          id: 1,
           title: "This is title 1",
           description:
             "This is description, this is description, this is description.",
@@ -54,7 +54,7 @@ export default {
             "This is the content, this is the content, this is the content, this is the content.",
         },
         {
-          id:2,
+          id: 2,
           title: "This is title 2",
           description:
             "This is description, this is description, this is description.",
@@ -64,7 +64,7 @@ export default {
             "This is the content, this is the content, this is the content, this is the content.",
         },
         {
-          id:3,
+          id: 3,
           title: "This is title 3",
           description:
             "This is description, this is description, this is description.",
@@ -76,11 +76,11 @@ export default {
       ],
     };
   },
-  methods:{
-    artilceClick(article_id){
-      this.$router.push("/article/"+article_id)
-    }
-  }
+  methods: {
+    artilceClick(article_id) {
+      this.$router.push("/article/" + article_id);
+    },
+  },
 };
 </script>
 
