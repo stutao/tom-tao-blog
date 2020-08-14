@@ -1,34 +1,35 @@
 <template>
-  <Dropdown style="margin-left: 20px;float:right">
-    <div class="avatar">
-      <div v-if="isLogin">
-        <Avatar src="https://tse3-mm.cn.bing.net/th/id/OIP.RKh2hxr2mwPR__c-Ya2XFQAAAA?pid=Api&rs=1" />
+  <div>
+    <Dialog :co-register.sync="register" />
+    <Dropdown style="margin-left: 20px;float:right">
+      <div class="avatar">
+        <div v-if="isLogin">
+          <Avatar
+            src="https://tse3-mm.cn.bing.net/th/id/OIP.RKh2hxr2mwPR__c-Ya2XFQAAAA?pid=Api&rs=1"
+          />
+        </div>
+        <div v-else @click="register = true">登录/注册</div>
       </div>
-      <div v-else>
-        登录/注册
-      </div>
-    </div>
-    <DropdownMenu slot="list">
-      <div v-if="isLogin">
-        <DropdownItem>个人中心</DropdownItem>
-        <DropdownItem>退出登录</DropdownItem>
-      </div>
-      <div v-else>
-        <DropdownItem>登录</DropdownItem>
-        <DropdownItem>注册</DropdownItem>
-      </div>
-    </DropdownMenu>
-  </Dropdown>
+      <DropdownMenu slot="list" v-if="isLogin">
+        <div>
+          <DropdownItem>个人中心</DropdownItem>
+          <DropdownItem>退出登录</DropdownItem>
+        </div>
+      </DropdownMenu>
+    </Dropdown>
+  </div>
 </template>
 
 <script>
+import Dialog from "./dialog";
 export default {
   name: "",
-  components: {},
+  components: { Dialog },
   data() {
     return {
       userName: "李四",
-      isLogin: true,
+      isLogin: false,
+      register: false,
     };
   },
 };
