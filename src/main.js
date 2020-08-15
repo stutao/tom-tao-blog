@@ -11,6 +11,8 @@ import axios from "axios"
 import hljs from "highlight.js"
 import "highlight.js/styles/atom-one-dark.css"
 
+import store from "./store"
+
 Vue.use(ViewUI)
 
 Vue.prototype.$axios = axios //定义为全局
@@ -23,7 +25,15 @@ Vue.directive("highlight", function(el) {
   })
 })
 
+const whiteList = ["/index"]
+router.beforeEach(async (to, from, next) => {
+  if (whiteList.include(to.path)) {
+    return next()
+  }
+  const isAuthentication = await store.dispatch("validate_token")
+})
 new Vue({
   render: (h) => h(App),
   router,
+  store,
 }).$mount("#app")

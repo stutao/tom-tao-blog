@@ -54,3 +54,6 @@ export default new Router({
   routes: [rootRouter, CMSRouter, indexRouter,detailRouter],
   mode: "history",
 })
+
+
+
