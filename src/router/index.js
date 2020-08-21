@@ -50,10 +50,22 @@ const detailRouter = {
   component: Details,
 }
 
-export default new Router({
+
+const router = new Router({
   routes: [rootRouter, CMSRouter, indexRouter,detailRouter],
   mode: "history",
 })
+// 加入跳转钩子  验证jwt
+
+// const whiteList = ["/index"]
+// router.beforeEach(async (to, from, next) => {
+//   if (whiteList.include(to.path)) {
+//     return next()
+//   }
+//   const isAuthentication = await store.dispatch("validate_token")
+// })
+
+export default router
 
 
 

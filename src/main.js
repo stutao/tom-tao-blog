@@ -25,13 +25,6 @@ Vue.directive("highlight", function(el) {
   })
 })
 
-const whiteList = ["/index"]
-router.beforeEach(async (to, from, next) => {
-  if (whiteList.include(to.path)) {
-    return next()
-  }
-  const isAuthentication = await store.dispatch("validate_token")
-})
 new Vue({
   render: (h) => h(App),
   router,
